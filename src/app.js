@@ -15,6 +15,7 @@ const middleware = require('./middleware');
 const services = require('./services');
 const appHooks = require('./app.hooks');
 const channels = require('./channels');
+const seeder = require('./seeder');
 
 const authentication = require('./authentication');
 
@@ -49,6 +50,10 @@ app.configure(channels);
 // Configure a middleware for 404s and the error handler
 app.use(express.notFound());
 app.use(express.errorHandler({ logger }));
+
+// Configure the custom seeder
+app.configure(seeder);
+app.seed();
 
 app.hooks(appHooks);
 

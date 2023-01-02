@@ -6,6 +6,19 @@
 
 This project uses [Feathers](http://feathersjs.com). An open source web framework for building modern real-time applications.
 
+## Changes made for Simple Seeder
+
+1. Create *seeder.js* in the *src* folder
+2. Add the following to *src\app.js* file
+    ```
+    ...
+    const seeder = require('./seeder');
+    ...
+    app.configure(seeder);
+    app.seed();
+    ...
+    ```
+
 ## Getting Started
 
 Getting up and running is as easy as 1, 2, 3.
